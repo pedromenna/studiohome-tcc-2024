@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Previne barra de rolagem horizontal */
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o carrossel */
+  width: 80vw; /* Define a largura do carrossel */
+  max-width: 1000px; /* Define uma largura máxima para o carrossel */
+  position: relative;
+  overflow: hidden; /* Esconde qualquer transbordamento */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.carousel__button {
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  border: none;
+  color: white; /* Cor do texto branco */
+  font-size: 1rem; /* Tamanho da fonte ajustado */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0.5rem; /* Padding ajustado para área clicável */
+  width: 2rem; /* Largura fixa para criar um círculo */
+  height: 2rem; /* Altura fixa para criar um círculo */
+  border-radius: 50%; /* Torna o botão circular */
+  border: 2px solid white; /* Adiciona um contorno branco ao redor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s; /* Animação suave para hover */
+}
+
+.carousel__button:hover {
+  background: rgba(0, 0, 0, 0.7); /* Fundo mais escuro ao hover */
+}
+
+.carousel__button--prev {
+  left: 10px;
+}
+
+.carousel__button--next {
+  right: 10px;
+}
+
+.carousel__image-container {
+  width: 100%; /* Ocupa 100% da largura do carrossel */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel__image {
+  width: 100%; /* Imagem ocupa 100% da largura do contêiner */
+  height: auto;
+}
+

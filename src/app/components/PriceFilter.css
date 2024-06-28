@@ -1,0 +1,11 @@
+/* Estilos personalizados adicionais */
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
