@@ -12,7 +12,7 @@ function Navbar() {
     const router = useRouter();
     const [query, setQuery] = useState('');
 
-    const handleSearch = (e: React.FormEvent) => {
+    const handleSearch = (e: React.FormEvent | React.MouseEvent) => {
         e.preventDefault();
         if (query) {
             router.push(`/search?query=${query}`);
@@ -27,7 +27,10 @@ function Navbar() {
             {/* Barra de Pesquisa */}
             <form onSubmit={handleSearch} className="flex-grow flex justify-center ml-8 mr-8">
                 <div className="relative w-full max-w-3xl">
-                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <div 
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                        onClick={handleSearch}
+                    >
                         <Search className="h-6 w-6 text-gray-400" />
                     </div>
                     <input 
