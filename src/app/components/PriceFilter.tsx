@@ -7,8 +7,8 @@ interface PriceFilterProps {
 }
 
 const PriceFilter: React.FC<PriceFilterProps> = ({ onFilter }) => {
-    const [range, setRange] = useState<[number, number]>([0, 1000]);
-    const [tempRange, setTempRange] = useState<[number, number]>([0, 1000]);
+    const [range, setRange] = useState<[number, number]>([0, 8000]);
+    const [tempRange, setTempRange] = useState<[number, number]>([0, 8000]);
 
     const handleRangeChange = (values: [number, number]) => {
         setTempRange(values);
@@ -30,7 +30,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilter }) => {
                     <Slider
                         range
                         min={0}
-                        max={1000}
+                        max={8000}
                         value={tempRange}
                         onChange={(values) => handleRangeChange(values as [number, number])}
                         onAfterChange={(values) => handleAfterChange(values as [number, number])}
@@ -44,8 +44,15 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilter }) => {
                 </div>
                 <button
                     onClick={handleFilter}
-                    className="p-2 rounded border"
-                    style={{ backgroundColor: 'white', color: 'black', borderColor: 'black', borderWidth: '1px' }} // Traçado preto
+                    className="p-1 rounded border text-sm"
+                    style={{ 
+                        backgroundColor: 'white', 
+                        color: 'black', 
+                        borderColor: 'black', 
+                        borderWidth: '1px',
+                        height: '30px',
+                        width: '50px'
+                    }} // Ajustando a altura, largura e a fonte
                 >
                     Ir
                 </button>
