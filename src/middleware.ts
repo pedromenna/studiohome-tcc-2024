@@ -8,7 +8,8 @@ export default authMiddleware({
     '/sign-up', 
     '/search', 
     '/api/search',  // Adicione a rota /api/search às rotas públicas
-    '/api/filter'   // Adicione a rota /api/filter às rotas públicas
+    '/api/filter',   // Adicione a rota /api/filter às rotas públicas
+    '/api/webhooks/user'
   ],
   ignoredRoutes: [
     "/((?!api|trpc))(_next.*|.+\\.[\\w]+$)", 
