@@ -36,7 +36,7 @@ function Navbar() {
                     <input 
                         type="text" 
                         placeholder="Pesquisar" 
-                        className="border py-2 px-4 pl-12 pr-10 focus:outline-none focus:ring focus:border-gray-800 w-full rounded-md"
+                        className="border py-2 px-4 pl-12 pr-10 focus:outline-none focus:ring focus:border-gray-800 w-full rounded-md custom-input"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)} 
                     />

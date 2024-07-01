@@ -13,8 +13,11 @@ type ProductProps = {
 export default function Product({ product, className = '' }: ProductProps) {
     return (
         <Link href={`/product/${product.id}`}>
-            <div className={`flex flex-col shadow-lg bg-gray-200 rounded-lg p-2 text-gray-800 hover:bg-gray-300 transition-colors duration-300 ${className}`} style={{ height: '220px' }}> {/* Reduced overall height and padding */}
-                <div className="relative flex-grow h-2/3 w-full"> {/* Adjusted height of the image container */}
+            <div 
+                className={`flex flex-col shadow-lg bg-white bg-opacity-90 p-2 text-gray-800 hover:bg-opacity-100 transition-all duration-300 ${className}`} 
+                style={{ height: '300px', width: '220px', border: '1px solid rgba(0, 0, 0, 0.1)' }} // Aumentou a largura do cartão
+            > 
+                <div className="relative flex-grow h-3/4 w-full"> {/* Ajustou a altura do contêiner da imagem */}
                     {product.image ? (
                         <Image 
                             src={product.image} 
@@ -29,10 +32,10 @@ export default function Product({ product, className = '' }: ProductProps) {
                         </div>
                     )}
                 </div>
-                <div className="flex flex-col justify-between mt-1 h-1/3"> {/* Adjusted height of the text container */}
-                    <p className="truncate text-lg sm:text-base mb-0.5">{product.name}</p> {/* Increased text size */}
+                <div className="flex flex-col justify-between mt-1 h-1/4"> {/* Ajustou a altura do contêiner de texto */}
+                    <p className="truncate text-lg sm:text-base mb-0.5 hover:text-slate-800 transition-colors duration-300">{product.name}</p> {/* Tamanho do texto ajustado */}
                     <div className="flex justify-between items-end">
-                        <p className="text-sm font-semibold">{formatPrice(product.price)}</p> {/* Reduced text size */}
+                        <p className="price">{formatPrice(product.price)}</p> {/* Aplicada a classe "price" */}
                         <AddCartIcone product={product} />
                     </div>
                 </div>

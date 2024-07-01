@@ -7,7 +7,6 @@ import CheckoutButton from './CheckoutButton';
 import Checkout from './Checkout';
 import OrderCompleted from './OrderCompleted';
 
-
 export default function CartDrawer() {
   const useStore = useCartStore();
 
@@ -42,7 +41,7 @@ export default function CartDrawer() {
                 animate={{ scale: 1, rotateZ: 0, opacity: 0.75}}
                 initial={{ scale: 0.5, rotateZ: -10, opacity: 0}}
                 exit={{ scale: 0.5, rotateZ: -10, opacity: 0}}
-               key={item.id} className='flex gap-4 py-4'>
+                key={item.id} className='flex gap-4 py-4'>
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -52,22 +51,24 @@ export default function CartDrawer() {
                 />
                 <div>
                   <h2 className='w-42 truncate'>{item.name}</h2>
-                  <h2>Quantidade: {item.quantity}</h2>
-                  <p className='text-teal-600 text-sm font-bold'>
+                  <div className='flex items-center mt-2'>
+                    <button
+                      className='py-1 px-2 border rounded-full text-sm mr-2'
+                      onClick={() => useStore.removeProduct(item)}
+                    >
+                      -
+                    </button>
+                    <span className='text-sm'>{item.quantity}</span>
+                    <button
+                      className='py-1 px-2 border rounded-full text-sm ml-2'
+                      onClick={() => useStore.addProduct(item)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className='text-teal-600 text-sm font-bold mt-2'>
                     {formatPrice(item.price)}
                   </p>
-                  <button
-                    className='py-1 px-2 border rounded-md mt-2 text-sm mr-1'
-                    onClick={() => useStore.addProduct(item)}
-                  >
-                    Adicionar
-                  </button>
-                  <button
-                    onClick={() => useStore.removeProduct(item)}
-                    className='py-1 px-2 border rounded-md mt-2 text-sm'
-                  >
-                    Remover
-                  </button>
                 </div>
               </motion.div>
             ))}

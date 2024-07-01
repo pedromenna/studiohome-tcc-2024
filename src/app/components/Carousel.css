@@ -1,49 +1,66 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; /* Previne barra de rolagem horizontal */
-}
-
 .carousel {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o carrossel */
-  width: 80vw; /* Define a largura do carrossel */
-  max-width: 1000px; /* Define uma largura máxima para o carrossel */
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
   position: relative;
-  overflow: hidden; /* Esconde qualquer transbordamento */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  overflow: hidden;
+}
+
+.carousel__image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.carousel__image--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel__image--hidden {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .carousel__button {
-  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  color: white; /* Cor do texto branco */
-  font-size: 1rem; /* Tamanho da fonte ajustado */
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  padding: 0.5rem; /* Padding ajustado para área clicável */
-  width: 2rem; /* Largura fixa para criar um círculo */
-  height: 2rem; /* Altura fixa para criar um círculo */
-  border-radius: 50%; /* Torna o botão circular */
-  border: 2px solid white; /* Adiciona um contorno branco ao redor */
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s; /* Animação suave para hover */
+  transition: background 0.3s;
 }
 
 .carousel__button:hover {
-  background: rgba(0, 0, 0, 0.7); /* Fundo mais escuro ao hover */
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel__button--prev {
@@ -54,15 +71,28 @@ body, html {
   right: 10px;
 }
 
-.carousel__image-container {
-  width: 100%; /* Ocupa 100% da largura do carrossel */
+.carousel__dots {
+  position: absolute;
+  bottom: 10px;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  width: 100%;
+  gap: 0.5rem;
 }
 
-.carousel__image {
-  width: 100%; /* Imagem ocupa 100% da largura do contêiner */
-  height: auto;
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
+.carousel__dot.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carousel__dot:hover {
+  background: rgba(255, 255, 255, 0.75);
+}

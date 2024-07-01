@@ -1,6 +1,6 @@
 'use client'
 import { loadStripe, StripeElementsOptions } from "@stripe/stripe-js"
-import { Elements } from "@stripe/react-stripe-js"
+import { Elements, PaymentElement } from "@stripe/react-stripe-js"
 import { useCartStore } from '@/store';
 import { useEffect, useState } from 'react';
 import CheckoutForm from "./CheckoutForm";

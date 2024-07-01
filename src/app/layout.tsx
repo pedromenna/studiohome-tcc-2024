@@ -8,8 +8,6 @@ import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@c
 import { ptBR } from "@clerk/localizations";
 import Hydrate from "./components/Hydrate";
 
-import primeiroImg from 'primeiro.png';
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,7 +26,7 @@ export default function RootLayout({
         <body className={clsx(inter.className)} style={{ backgroundColor: 'rgb(240, 242, 245)' }}>
           <Hydrate>
             <Navbar />
-            <main className="h-screen p-16">
+            <main className="min-h-screen">
               {children}
             </main>
           </Hydrate>
