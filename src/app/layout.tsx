@@ -11,7 +11,7 @@ import Hydrate from "./components/Hydrate";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Studiohome.store | Música para Sua Vida",
+  title: "Studio Home | Música para Sua Vida",
   description: "Sua Loja de Música Online",
 };
 
