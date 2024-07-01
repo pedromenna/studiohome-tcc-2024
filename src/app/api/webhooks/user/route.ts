@@ -63,7 +63,7 @@ async function handler(request: Request) {
 
     // inserir usuario no stripe
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-      apiVersion:'2024-04-10'
+  apiVersion: '2024-04-10'
     });
 
     const customer = await stripe.customers.create({

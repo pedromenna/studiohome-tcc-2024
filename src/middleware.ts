@@ -9,7 +9,8 @@ export default authMiddleware({
     '/search', 
     '/api/search',  // Adicione a rota /api/search às rotas públicas
     '/api/filter',   // Adicione a rota /api/filter às rotas públicas
-    '/api/webhooks/user'
+    '/api/webhooks/user',
+    '/api/webhooks/stripe'
   ],
   ignoredRoutes: [
     "/((?!api|trpc))(_next.*|.+\\.[\\w]+$)", 

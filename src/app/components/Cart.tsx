@@ -1,3 +1,4 @@
+
 'use client';
 import { useCartStore } from '@/store';
 import CartDrawer from './CartDrawer';
@@ -39,7 +40,7 @@ export default function Cart() {
           {useStore.cart?.length}
         </span>
       </div>
-      {useStore.isOpen && <CartDrawer />}
+      {!useStore.isOpen && <CartDrawer />}
     </>
   );
 }
