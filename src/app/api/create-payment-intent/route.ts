@@ -15,15 +15,14 @@ export async function POST(req: Request) {
   const { userId } = auth();
   const { items, payment_intent_id } = await req.json();
 
-  if(!userId){
+  if (!userId) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  const customerIdTemp = 'cus_OvJFglQZ0DNK3i';
   const total = calculateOrderAmount(items);
 
   const orderData = {
-    user: { connect: { id: 1 } },
+    user: { connect: { id: Number(userId) } }, // Certifique-se de que userId é um número, se necessário
     amount: total,
     currency: 'brl',
     status: 'pending',
@@ -37,7 +36,7 @@ export async function POST(req: Request) {
         image: item.image
       }))
     }
-  }
+  };
 
   if (payment_intent_id) {
     const current_intent = await stripe.paymentIntents.retrieve(payment_intent_id);
@@ -66,7 +65,7 @@ export async function POST(req: Request) {
                 image: item.image
               }))
             }
-          }        
+          }
         })
       ]);
 
@@ -74,7 +73,7 @@ export async function POST(req: Request) {
         return new Response("Order not found", { status: 404 });
       }
 
-      return NextResponse.json({ paymentIntent: updated_intent }, { status: 200})
+      return NextResponse.json({ paymentIntent: updated_intent }, { status: 200 });
     }
 
   } else {
@@ -88,9 +87,8 @@ export async function POST(req: Request) {
 
     const newOrder = await prisma.order.create({
       data: orderData
-    })
-    
-    return NextResponse.json({ paymentIntent }, { status: 200})
-  }
+    });
 
+    return NextResponse.json({ paymentIntent }, { status: 200 });
+  }
 }
