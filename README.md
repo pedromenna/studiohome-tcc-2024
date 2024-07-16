@@ -1,4 +1,4 @@
-#  Projeto: E-commerce STUDIO HOME
+#  E-commerce STUDIO HOME
 
 ##  Descrição
 
