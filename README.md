@@ -23,11 +23,11 @@ Este projeto de e-commerce tem como objetivo principal a implementação do Stri
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/pedromenna/studiohome-tcc-2024
     ```
 2. Instale as dependências:
     ```sh
-    cd seu-repositorio
+    cd studiohome-tcc-2024
     npm install
     ```
 3. Inicie a aplicação:
