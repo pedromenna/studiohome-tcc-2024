@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎉 Projeto: Integração do Stripe na Aplicação
 
-## Getting Started
+## 📚 Descrição
 
-First, run the development server:
+Este projeto de e-commerce tem como objetivo principal a implementação do Stripe em uma aplicação web. O foco é permitir a adição de produtos ao banco de dados e realizar o processo de checkout de forma funcional, garantindo que todas as informações pertinentes sejam armazenadas corretamente no banco de dados.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Adição de Produtos**: Permite adicionar novos produtos ao banco de dados através de uma interface amigável.
+- **Checkout**: Implementação do processo de checkout utilizando o Stripe, assegurando que as transações sejam processadas corretamente e que os dados sejam armazenados de forma segura.
+- **Armazenamento de Dados**: Utilização do Vercel Postgres para armazenar todos os dados relacionados aos produtos e transações de checkout.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **React**: Biblioteca JavaScript para a construção da interface do usuário.
+- **Prisma**: ORM (Object-Relational Mapping) para interagir com o banco de dados de forma eficiente e segura.
+- **Tailwind CSS**: Framework de CSS para estilização rápida e responsiva da aplicação.
+- **Clerk**: Solução de autenticação e gerenciamento de usuários.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código, aumentando a segurança e a previsibilidade.
+- **Vercel Postgres**: Banco de dados relacional oferecido pela Vercel, utilizado para armazenar dados de produtos, usuários e transações.
 
-## Learn More
+## 🚀 Instalação e Execução
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone o repositório:
+    ```sh
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    ```
+2. Instale as dependências:
+    ```sh
+    cd seu-repositorio
+    npm install
+    ```
+3. Inicie a aplicação:
+    ```sh
+    npm run dev
+    ```
+## 📄 Licença
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feito por Pedro Menna(https://github.com/pedromenna)
