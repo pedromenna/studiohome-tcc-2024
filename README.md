@@ -1,4 +1,4 @@
-#  Projeto: Integração do Stripe na Aplicação
+#  Projeto: E-commerce STUDIO HOME
 
 ##  Descrição
 
